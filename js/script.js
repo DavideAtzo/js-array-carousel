@@ -7,19 +7,20 @@ let active = 0;
 
 // prendo elemento html e la inserisco in una variabile 
 const slider = document.querySelector('.slider');
-
+// ciclo for che fa inserire 5 volte gli elementi con img e classi personalizzate 
 for(let i = 0; i < imgArray.length; i++){
     console.log(imgArray[i]);
     imgContent += `<div class="box-img"><img src="img/${imgArray[i]}" alt=""></div>`;
 }
+// inserisco i precedenti elementi nel contenitore html 
 slider.innerHTML += imgContent;
-
+// aggiungo la classe show nell elemento 
 document.querySelector('.box-img').classList.add('show');
+// dichiaro altre variabili 
 const prev = document.querySelector('.row-up');
 const next = document.querySelector('.row-down');
 const boxesImg = document.querySelectorAll('.box-img');
-console.log(boxesImg);
-
+// evento click img precedente 
 prev.addEventListener('click',
     function () { 
         if (active > 0) {
@@ -28,7 +29,7 @@ prev.addEventListener('click',
             boxesImg[active].classList.add('show');
         }
     })
-
+// evento click img successiva 
 next.addEventListener('click',
     function () {
         if (active < boxesImg.length - 1) {
