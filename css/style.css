@@ -34,6 +34,7 @@ BODY
 
 .box-img{
     height: 100%;
+    display: none;
 }
 
 .row-up,
@@ -67,3 +68,6 @@ i{
     border-radius: 50%;
 }
 
+.show{
+    display: block;
+}
