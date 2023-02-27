@@ -4,12 +4,13 @@
 const imgArray = ['01.webp', '02.webp', '03.webp', '04.webp', '05.webp'];
 let imgContent = '';
 let active = 0;
+
 // prendo elemento html e la inserisco in una variabile 
 const slider = document.querySelector('.slider');
 
 for(let i = 0; i < imgArray.length; i++){
     console.log(imgArray[i]);
-    imgContent += '<div class="box-img"><img src="img/01.webp" alt="img"></div>';
+    imgContent += `<div class="box-img"><img src="img/${imgArray[i]}" alt=""></div>`;
 }
 slider.innerHTML += imgContent;
 
@@ -20,14 +21,19 @@ const boxesImg = document.querySelectorAll('.box-img');
 console.log(boxesImg);
 
 prev.addEventListener('click',
-    function () {
+    function () { 
+        // if (active > 0) {
+        //     itemImg[active].classList.remove('show')
+        //     active--;
+        //     itemImg[active].classList.add('show');
+        // }
     })
 
 next.addEventListener('click',
     function () {
-        console.log('ho cliccato su next');
-        console.log(active);
-        console.log('incremento active');
-        active++;
-        console.log(active);
+        if (active < boxesImg.length - 1) {
+            boxesImg[active].classList.remove('show')
+            active++;
+            boxesImg[active].classList.add('show')
+        }
     })
