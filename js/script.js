@@ -22,11 +22,11 @@ console.log(boxesImg);
 
 prev.addEventListener('click',
     function () { 
-        // if (active > 0) {
-        //     itemImg[active].classList.remove('show')
-        //     active--;
-        //     itemImg[active].classList.add('show');
-        // }
+        if (active > 0) {
+            boxesImg[active].classList.remove('show')
+            active--;
+            boxesImg[active].classList.add('show');
+        }
     })
 
 next.addEventListener('click',
