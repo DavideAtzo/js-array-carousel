@@ -14,3 +14,9 @@ rowUp.addEventListener('click',
 function(){
     alert('img precedente')
 })
+
+
+rowDown.addEventListener('click',
+function(){
+    alert('img precedente')
+})
