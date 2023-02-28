@@ -23,7 +23,6 @@ for (let i = 0; i < imgArray.length; i++) {
 // inserisco i precedenti elementi nel contenitore html 
 slider.innerHTML += imgContent;
 
-
 // aggiungo la classe show nell elemento 
 document.querySelector('.box-img').classList.add('show');
 // dichiaro altre variabili prendendo dall'html
@@ -31,23 +30,23 @@ const prev = document.querySelector('.row-up');
 const next = document.querySelector('.row-down');
 const boxesImg = document.querySelectorAll('.box-img');
 const preview = document.querySelector('.preview')
-
+// preview img 
 for (let i = 0; i < imgArray.length; i++) {
     console.log(imgArray[i]);
     imgPreview += `<div class="prev-img"><img src="img/${imgArray[i]}" alt="img"></div>`;
 }
 preview.innerHTML += imgPreview;
-
+// document.querySelector('.prev-img').classList.add('ms-style');
 // evento click img precedente 
 prev.addEventListener('click',
     function () {
         if (active > 0) {
-            boxesImg[active].classList.remove('show')
+            boxesImg[active].classList.remove('show');
             active--;
             boxesImg[active].classList.add('show');
         } else {
             boxesImg[active].classList.remove('show');
-            active = 4 -1 ;
+            active = 4 - 1;
             active++;
             boxesImg[active].classList.add('show');
         }
@@ -56,9 +55,9 @@ prev.addEventListener('click',
 next.addEventListener('click',
     function () {
         if (active < boxesImg.length - 1) {
-            boxesImg[active].classList.remove('show')
+            boxesImg[active].classList.remove('show');
             active++;
-            boxesImg[active].classList.add('show')
+            boxesImg[active].classList.add('show');
         } else if (active = 4) {
             boxesImg[active].classList.remove('show');
             active = 0 - 1;
@@ -66,3 +65,4 @@ next.addEventListener('click',
             boxesImg[active].classList.add('show');
         }
     })
+

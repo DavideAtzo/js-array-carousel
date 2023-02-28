@@ -16,9 +16,22 @@ BODY
 +++++++++++
  */
 
+body{
+    background-image: url(../img/video-game.jpg);
+    background-size: cover;
+}
+
+.content{
+    background-image: url(../img/pattern.jpg);
+    background-size: cover;
+    padding: 20px;
+    border-radius: 15px;
+    border: 5px solid orangered;
+    display: flex;
+}
 
 .container{
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -27,7 +40,7 @@ BODY
 }
 
 .slider{
-    width: 600px;
+    width: 700px;
     height: 400px;
     position: relative;
 }
@@ -36,7 +49,14 @@ BODY
     height: 100%;
     display: none;
 }
-
+.box-img img,
+.preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid orangered;
+}
 .row-up,
 .row-down{
     color: greenyellow;
@@ -54,19 +74,14 @@ BODY
     top: 20px;
 }
 
-.box-img img,
-.preview img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 i{
     font-size: 40px;
     border: .0625rem solid transparent;
-    padding: .625rem;
-    background-color: rgb(84, 81, 81);
-    border-radius: 50%;
+    padding: .3125rem 1.5625rem;
+}
+
+i:hover{
+    background-color: rgba(84, 81, 81, 0.5);
 }
 
 .show{
@@ -76,7 +91,7 @@ i{
 .preview{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 400px;
     padding-left: 20px;
 }
@@ -85,4 +100,8 @@ i{
     height: calc(100% / 5);
     padding-bottom: 10px;
     width: 150px;
+}
+
+.ms-style{
+    opacity: 0.5;
 }
